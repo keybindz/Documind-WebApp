@@ -2,6 +2,14 @@
 
 React + TypeScript + Vite frontend for the DocuMind FastAPI backend.
 
+## Screenshots
+
+|                                 |                                 |                                 |
+| :-----------------------------: | :-----------------------------: | :-----------------------------: |
+| ![Screenshot 1](./public/1.png) | ![Screenshot 2](./public/2.png) | ![Screenshot 3](./public/3.png) |
+| ![Screenshot 4](./public/4.jpg) | ![Screenshot 5](./public/5.jpg) | ![Screenshot 6](./public/6.png) |
+| ![Screenshot 7](./public/7.png) |                                 |                                 |
+
 ## Requirements
 
 - Node.js 20.19+ (or 22.12+)
