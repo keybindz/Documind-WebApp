@@ -1,0 +1,15 @@
+export type User = { id:string; tenant_id:string; email:string; role:'owner'|'member'; created_at:string };
+export type Token = { access_token:string; token_type:string };
+export type DocumentStatus = 'pending'|'extracting'|'chunking'|'embedding'|'ready'|'failed';
+export type Doc = { id:string; filename:string; mime_type:string; size_bytes:number; status:DocumentStatus; error_message:string|null; char_count:number|null; attempts:number; created_at:string; processed_at:string|null };
+export type DocumentList = { items:Doc[]; total:number; limit:number; offset:number };
+export type TenantUsage = { tenant_id:string; name:string; plan:string; document_count:number; max_documents:number; query_rate_per_minute:number; upload_rate_per_minute:number };
+export type Chunk = { id:string; document_id:string; chunk_index:number; content:string; token_count:number; embedding_status:string };
+export type ChunkList = { items:Chunk[]; total:number; limit:number; offset:number };
+export type DocumentContent = { id:string; filename:string; extracted_text:string|null };
+export type RetrievedChunk = { chunk_id:string; document_id:string; document_filename:string; content:string; score:number };
+export type QueryResponse = { question:string; answer:string|null; answer_synthesized:boolean; retrieved_chunks:RetrievedChunk[] };
+export type Webhook = { id:string; url:string; events:string[]; is_active:boolean; created_at:string };
+export type WebhookCreated = Webhook & { secret:string };
+export type Delivery = { id:string; webhook_id:string; event_type:string; status:string; attempts:number; last_status_code:number|null; last_error:string|null; created_at:string; delivered_at:string|null };
+export type DeliveryList = { items:Delivery[]; total:number; limit:number; offset:number };
